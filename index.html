@@ -1,45 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eduardo e Sabrina</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Eduardo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
     <h1>Eduardo</h1>
-    <p class="sub">“Obrigado por entrar na minha vida”</p>
-
+    <p><em>"Obrigado por entrar na minha vida"</em></p>
     <audio controls autoplay loop>
-      <source src="musica.mp3.mp3" type="audio/mpeg">
-      Seu navegador não suporta áudio.
+        <source src="musica.mp3" type="audio/mp3">
+        Seu navegador não suporta áudio.
     </audio>
-
-    <div class="foto-casal">
-      <img src="Imagem.jpg.heic" alt="Foto do casal">
+    <div class="image-container">
+        <img src="foto.jpg" alt="Foto do casal"/>
     </div>
+    <p>Estamos juntos há: <span id="contador"></span></p>
 
-    <p class="contador" id="contador"></p>
+    <div class="hearts-container"></div>
+    <script>
+        const inicioRelacionamento = new Date('2025-03-30T01:00:00');
+        function atualizarContador() {
+            const agora = new Date();
+            const diff = agora - inicioRelacionamento;
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diff / (1000 * 60)) % 60);
+            const segundos = Math.floor((diff / 1000) % 60);
+            document.getElementById('contador').textContent =
+                `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
 
-    <button onclick="compartilhar()">Compartilhar</button>
-  </div>
-
-  <div class="hearts"></div>
-
-  <script src="script.js"></script>
-  <!-- Corações animados -->
-<div class="hearts-container"></div>
-<script>
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-    document.querySelector('.hearts-container').appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }
-  setInterval(createHeart, 500);
-</script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.querySelector('.hearts-container').appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 500);
+    </script>
 </body>
 </html>
