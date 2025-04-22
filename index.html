@@ -28,5 +28,18 @@
   <div class="hearts"></div>
 
   <script src="script.js"></script>
+  <!-- Corações animados -->
+<div class="hearts-container"></div>
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    document.querySelector('.hearts-container').appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+  setInterval(createHeart, 500);
+</script>
 </body>
 </html>
