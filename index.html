@@ -45,5 +45,51 @@
         }
         setInterval(createHeart, 500);
     </script>
+    <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/?text=https://eduardodiasssss.github.io" target="_blank">
+    <button style="background-color: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+      WhatsApp
+    </button>
+  </a>
+
+  <!-- Telegram -->
+  <a href="https://t.me/share/url?url=https://eduardodiasssss.github.io" target="_blank">
+    <button style="background-color: #0088cc; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+      Telegram
+    </button>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://eduardodiasssss.github.io" target="_blank">
+    <button style="background-color: #3b5998; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+      Facebook
+    </button>
+  </a>
+
+  <!-- Twitter / X -->
+  <a href="https://twitter.com/intent/tweet?url=https://eduardodiasssss.github.io" target="_blank">
+    <button style="background-color: #1DA1F2; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+      X (Twitter)
+    </button>
+  </a>
+
+  <!-- Copiar Link -->
+  <button onclick="copiarLink()" style="background-color: #555; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+    Copiar link
+  </button>
+
+</div>
+
+<!-- Script para copiar o link -->
+<script>
+  function copiarLink() {
+    const link = "https://eduardodiasssss.github.io";
+    navigator.clipboard.writeText(link).then(() => {
+      alert("Link copiado para a área de transferência!");
+    });
+  }
+</script>
 </body>
 </html>
